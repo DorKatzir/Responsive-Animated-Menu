@@ -1,0 +1,170 @@
+// Menu Button
+.menu-btn{
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line{
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: $white;
+        @include easeOut;
+    }
+
+    // Rotate Into X with Menu Lines
+    &.close{
+        transform: rotate(180deg);
+
+        .btn-line{
+            // line 1 - Rotate
+            &:nth-child(1){
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            // line 2 - Hide
+            &:nth-child(2){
+                opacity: 0;
+            }
+            
+            // line 3 - Rotate
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+        }
+    }
+}
+
+// Menu Overlay
+.menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    // opacity: .5;
+    visibility: hidden;
+
+    &.show{
+        visibility: visible;
+    }
+
+    &-branding, 
+    &-nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &-nav{
+        margin: 0;
+        padding: 0;
+        background: rgba(darken($primary-color,9),.9);
+        backdrop-filter: blur(6px);
+        transform: translate3d(0, -100%, 0);
+        @include easeOut;
+        
+        &.show{
+            // Slide in from Top
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    // Branding Side
+    &-branding{
+        background: rgba($primary-color,.5);
+        backdrop-filter: blur(5px);
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+        
+        // Slide in from Bottom
+        &.show{
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .portrait{
+            width: 250px;
+            height: 250px;
+            background: url(../img/portrait_250px.jpg);
+            background-position-x: 10px;
+            background-size: cover;           
+            border-radius: 50%;
+            border: .3rem solid $secondary-color;
+        }
+    }
+    
+    .nav-item{
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+        
+        // Slide in from Right
+        &.show{
+            transform: translate3d(0, 0, 0);
+        }
+        
+        &.current > a {
+            color: $secondary-color;
+        }
+    }
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 400;
+        color: $white;
+        @include easeOut;
+
+        &:hover{
+            color: $secondary-color;
+        }
+    }
+
+}
+
+// Delay each nav-item slide by 0.1s
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * .1s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
