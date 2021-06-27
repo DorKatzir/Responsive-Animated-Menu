@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Responsive Animated menu",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DorKatzir/Responsive-Animated-Menu.git"
+  },
+  "author": "Dor Katzir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DorKatzir/Responsive-Animated-Menu/issues"
+  },
+  "homepage": "https://github.com/DorKatzir/Responsive-Animated-Menu#readme"
+}
